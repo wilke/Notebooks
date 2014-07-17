@@ -1,0 +1,158 @@
+---
+layout: bootcamp
+root: .
+venue: Cold Spring Harbor Laboratory, Hershey Building, east conference room
+address: One Bungtown Road, Cold Spring Harbor, NY
+country: United-States
+humandate: May 12-13, 2014
+humantime: 9:00 am - 4:30 pm
+startdate: 2014-05-12
+enddate: 2014-05-13
+latlng: 40.859197,-73.468704
+registration: open
+instructor: ["Will Trimble", "Sheldon McKay"]
+contact: admin@software-carpentry.org
+---
+<!--
+    Edit the values in the parameter block above to be appropriate for your bootcamp.
+    Please use three-letter month names for the 'humandate' field.
+-->
+
+
+<!--
+    This block includes the Eventbrite registration widget if 'eventbrite' has been set in the header.
+-->
+{% if page.eventbrite %}
+<iframe src="http://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt" frameborder="0" width="100%" scrolling="auto"></iframe>
+{% endif %}
+
+<h2>General Information</h2>
+
+<p>
+  <a href="http://software-carpentry.org">Software Carpentry</a>'s mission
+  is to help scientists and engineers become more productive
+  by teaching them basic lab skills for computing
+  like program design, version control, data management, and task automation.
+  This two-day hands-on bootcamp will cover basic concepts and tools;
+  participants will be encouraged to help one another
+  and to apply what they have learned to their own research problems.
+</p>
+
+<!-- This block displays the instructors' names if they are available. -->
+{% if page.instructor %}
+<p>
+  <strong>Instructors:</strong>
+  {{page.instructor | join: ', ' %}}
+</p>
+{% endif %}
+
+<!--
+    Modify this block to reflect the target audience for your bootcamp.
+    In particular, if it is only open to people from a particular institution,
+    or if specialized prerequisite knowledge is required, please mention that.
+-->
+<p>
+  <strong>Who:</strong>
+  The course is aimed at graduate students, postdocs, and other researchers.
+</p>
+
+<!--
+    This block displays the address and links to a map showing directions.
+-->
+{% if page.latlng %}
+<p>
+  <strong>Where:</strong>
+  {{ page.address }}.
+  Get directions with
+  <a href="http://www.openstreetmap.org/?mlat={{ page.latlng | replace:',','&mlon=' }}&zoom=16">OpenStreetMap</a>
+  or
+  <a href="http://maps.google.com/maps?q={{ page.latlng }}">Google Maps</a>.
+</p>
+{% endif %}
+
+<!--
+    Modify the block below if there are any special requirements.
+-->
+<p>
+  <strong>Requirements:</strong>
+  Participants must bring a laptop with a few specific software packages installed
+  (listed below).
+</p>
+
+<!--
+    This block automatically inserts a contact email address if one has been specified for the page.
+    If one hasn't, this block inserts the generic contact address for Software Carpentry.
+-->
+<p>
+  <strong>Contact</strong>:
+  Please mail
+  {% if page.contact %}
+    <a href='mailto:{{page.contact}}'>{{page.contact}}</a>
+  {% else %}
+    <a href='mailto:{{site.contact}}'>{{site.contact}}</a>
+  {% endif %}
+  for more information.
+</p>
+
+<hr/>
+
+<!--
+    Edit this block to show the syllabus and schedule for your bootcamp.
+-->
+<h2>Schedule</h2>
+
+<table class="table table-striped">
+  <tr> <td>Monday</td>  <td>09:00</td>  <td>Overview: getting things done--what are we optimizing for?</td> </tr>
+  <tr> <td>Monday</td>  <td>09:45</td>  <td>Introducing the shell</td> </tr>
+  <tr> <td></td>        <td>10:30</td>  <td>Break </td> </tr>
+  <tr> <td></td>        <td>10:45</td>  <td>Automating workflows (pipes and scripts)</td> </tr>
+  <tr> <td></td>        <td>12:00</td>  <td>Lunch break</td> </tr>
+  <tr> <td></td>        <td>13:00</td>  <td>Write code for people (python variables) </tr>
+  <tr> <td></td>        <td>14:30</td>  <td>Break</td> </tr>
+  <tr> <td></td>        <td>14:45</td>  <td>Write code for people (python datastructures) </tr>
+  <tr> <td>Tuesday</td> <td>09:00</td>  <td>Use version control (keep track of your work with git)</td> </tr>
+  <tr> <td></td>        <td>10:30</td>  <td>Break</td> </tr>
+  <tr> <td></td>        <td>10:45</td>  <td>Collaborate (synchronize and share your work with git)</td> </tr>
+  <tr> <td></td>        <td>12:00</td>  <td>Lunch break</td> </tr>
+  <tr> <td></td>        <td>13:00</td>  <td>Getting things done in shell (pipes and grep) </td> </tr>
+  <tr> <td></td>        <td>13:30</td>  <td>Don't repeat yourself (python loops, functions, and testing)</td> </tr>
+  <tr> <td></td>        <td>14:30</td>  <td>Break</td> </tr>
+  <tr> <td></td>        <td>14:45</td>  <td>Tour of R Studio</td> </tr>
+  <tr> <td></td>        <td>16:30</td>  <td>Break</td> </tr>
+  <tr> <td></td>        <td>16:45</td>  <td>Cloud computing and iPlant</td> </tr>
+</table>
+
+<hr/>
+
+<!--
+    Edit the setup instructions in _includes/setup.html to reflect your bootcamp.
+    (In particular, most bootcamps teach either Python or R, not both.)
+-->
+
+<h2>Setup</h2>
+
+<p>
+ To participate, you will need working copies of <em>bash<em>, <em>git</em> (gitbash on Windows), a Text editor, <em>python</em>, and <em>R Studio</em>. 
+  Please make sure to install everything
+  (or at least to download the installers)
+  before the start of your bootcamp.
+</p>
+
+{% include setup.html %}
+<h2>Setup Test</h2>
+<ul>
+<li>gitbash or terminal window
+<li>ipython 
+<li>git
+<li>Rstudio
+</ul>
+
+<h2>Group chat -- etherpad</h2>
+<a href="http://etherpad.mozilla.org/2014-05-12-cshl">Etherpad group chat</a>
+
+<h2>Lessons</h2>
+<a href="materials/index.html">Index to lessons</a>
+
+<h2>Post-bootcamp survey</h2>
+<a href="https://docs.google.com/forms/d/1Yl0y2EZL3yL0T9dVlBcY_fVszpmIyO6dQvcxij9Ouyk/viewform?usp=send_form">Post-bootcamp assessment</a>
+
